@@ -24,6 +24,7 @@ Console.WriteLine("Введите номер столбца");
 int py = Convert.ToInt32(Console.ReadLine());
 
 double[,] massive = array(a, b,mi,ma);
+ShowArray(massive);
 CheckOfElement(massive, px,py);
 
 double[,] array(int size1, int size2, int min, int max)
@@ -37,6 +38,17 @@ double[,] array(int size1, int size2, int min, int max)
         }
     }
     return massiv;
+}
+void ShowArray(double[,] massive)
+{
+    for (int i = 0; i < massive.GetLength(0); i++)
+    {
+        for (int j = 0; j < massive.GetLength(1); j++)
+        {
+            Console.Write($"{massive[i, j]:f5} ");
+        }
+        Console.WriteLine();
+    }
 }
 void CheckOfElement(double[,] mass, int x, int y)
 {
